@@ -85,4 +85,6 @@ class Stripe::Checkout::Session
   getter submit_type : SubmitType?
 
   getter subscription : String? | Stripe::Subscription?
+
+  getter url : String?
 end
