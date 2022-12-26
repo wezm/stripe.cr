@@ -13,7 +13,8 @@ class Stripe::Price
     limit : Int32? = nil,
     created : Hash(String, Int32)? = nil,
     starting_after : String? = nil,
-    ending_before : String? = nil
+    ending_before : String? = nil,
+    expand : Array(String)? = nil
   )
 
   getter id : String
