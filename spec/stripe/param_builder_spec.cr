@@ -10,6 +10,24 @@ describe Stripe::ParamsBuilder do
     io.to_s.should eq("test=string")
   end
 
+  it "can handle numbers" do
+    io = IO::Memory.new
+    builder = Stripe::ParamsBuilder.new(io)
+
+    builder.add("test", 123)
+
+    io.to_s.should eq("test=123")
+  end
+
+  it "can handle bools" do
+    io = IO::Memory.new
+    builder = Stripe::ParamsBuilder.new(io)
+
+    builder.add("test", true)
+
+    io.to_s.should eq("test=true")
+  end
+
   it "can handle arrays" do
     io = IO::Memory.new
     builder = Stripe::ParamsBuilder.new(io)
