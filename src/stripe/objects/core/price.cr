@@ -3,6 +3,8 @@ class Stripe::Price
   include JSON::Serializable
   include StripeMethods
 
+  add_retrieve_method
+
   add_list_method(
     active : Bool? = nil,
     product : String? = nil,
